@@ -9,8 +9,22 @@ public class ItemMapper {
     public static Item toDomain(ItemData itemData){
         return Item.builder()
                 .id(itemData.getId())
-                .name(itemData.getName())
-                .description(itemData.getDescription())
+                .label(itemData.getLabel())
+                .reference(itemData.getReference())
+                .quantityInStock(itemData.getQuantityInStock())
+                .isTrendToday(itemData.isTrendToday())
+                .price(itemData.getPrice())
+                .build();
+    }
+
+    public static ItemData toData(Item item) {
+        return ItemData.builder()
+                .id(item.getId())
+                .label(item.getLabel())
+                .reference(item.getReference())
+                .quantityInStock(item.getQuantityInStock())
+                .isTrendToday(item.isTrendToday())
+                .price(item.getPrice())
                 .build();
     }
 

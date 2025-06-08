@@ -7,6 +7,9 @@ import lombok.Getter;
 @Getter
 public class Item {
     private long id;
-    private String name;
-    private String description;
+    private String label;
+    private String reference;
+    private boolean isTrendToday;
+    private double price;
+    private int quantityInStock;
 }

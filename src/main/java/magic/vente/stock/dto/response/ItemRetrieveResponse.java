@@ -12,14 +12,21 @@ import java.util.List;
 @AllArgsConstructor
 public class ItemRetrieveResponse {
     private long id;
-    private String name;
-    private String description;
+    private String label;
+    private String reference;
+    private boolean isTrendToday;
+    private double price;
+    private int quantityInStock;
+
 
     public static ItemRetrieveResponse of(Item item) {
         return ItemRetrieveResponse.builder()
                 .id(item.getId())
-                .name(item.getName())
-                .description(item.getDescription())
+                .label(item.getLabel())
+                .reference(item.getReference())
+                .isTrendToday(item.isTrendToday())
+                .price(item.getPrice())
+                .quantityInStock(item.getQuantityInStock())
                 .build();
     }
 
