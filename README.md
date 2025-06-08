@@ -9,8 +9,11 @@ La base de données utilisée est **PostgreSQL**. Le projet est prévu pour êtr
 
 ## Dependances : 
   -Spring Web : dépendance principale pour créer une API REST (ou une appli web MVC).
+  
   -Spring Boot DevTools : Redémarrage à chaud
+  
   -Spring Data JPA : (ORM) Pour gérer la persistance des données via la base de données
+  
   -H2 Database (pour développement local) : Utile en développement seulement
 
 ## 🚀 Sprint 1 – Objectif
