@@ -2,6 +2,7 @@ package magic.vente.stock.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import magic.vente.stock.domain.model.Item;
 
@@ -10,6 +11,7 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
 public class ItemRetrieveResponse {
     private long id;
     private String label;
