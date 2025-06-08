@@ -1,5 +1,6 @@
 package magic.vente.stock.adapter;
 
+import lombok.RequiredArgsConstructor;
 import magic.vente.stock.adapter.data.ItemData;
 import magic.vente.stock.adapter.data.mapper.ItemMapper;
 import magic.vente.stock.adapter.jpa.ItemJpaRepository;
@@ -13,8 +14,10 @@ import org.springframework.stereotype.Repository;
 import java.util.Map;
 
 @Repository
+@RequiredArgsConstructor
 public class ItemAdapter implements ItemPort {
-    private ItemJpaRepository itemJpaRepository;
+    private final ItemJpaRepository itemJpaRepository;
+
     @Override
     public PageModel<Item> retrieveAll(Map<String, String> filters, int limit, int offset) {
         Page<ItemData> itemDataPage = itemJpaRepository.findAll(
