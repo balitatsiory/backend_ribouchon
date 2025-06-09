@@ -33,7 +33,7 @@ jobs:
               env:
                   DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
               run: |
-                  IMAGE_NAME=$DOCKER_USERNAME/DIL_API
+                  IMAGE_NAME=$DOCKER_USERNAME/dil_api
                   docker build -t $IMAGE_NAME .
                   docker push $IMAGE_NAME
 
