@@ -19,6 +19,8 @@ public class ItemRetrieveResponse {
     private boolean isTrendToday;
     private double price;
     private int quantityInStock;
+    private String image;
+    private String dailyImage;
 
 
     public static ItemRetrieveResponse of(Item item) {
@@ -28,6 +30,8 @@ public class ItemRetrieveResponse {
                 .reference(item.getReference())
                 .isTrendToday(item.isTrendToday())
                 .price(item.getPrice())
+                .image(item.getImg())
+                .dailyImage(item.getDailyImage())
                 .quantityInStock(item.getQuantityInStock())
                 .build();
     }

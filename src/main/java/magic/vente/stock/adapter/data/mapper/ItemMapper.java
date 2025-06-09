@@ -14,6 +14,8 @@ public class ItemMapper {
                 .quantityInStock(itemData.getQuantityInStock())
                 .isTrendToday(itemData.isTrendToday())
                 .price(itemData.getPrice())
+                .img(itemData.getImg())
+                .dailyImage(itemData.getDailyImage())
                 .build();
     }
 
@@ -25,6 +27,8 @@ public class ItemMapper {
                 .quantityInStock(item.getQuantityInStock())
                 .isTrendToday(item.isTrendToday())
                 .price(item.getPrice())
+                .img(item.getImg())
+                .dailyImage(item.getDailyImage())
                 .build();
     }
 

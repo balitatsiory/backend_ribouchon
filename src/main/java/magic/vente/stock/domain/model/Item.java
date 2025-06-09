@@ -9,7 +9,11 @@ public class Item {
     private long id;
     private String label;
     private String reference;
+    private String imageUrl;
+    private String dailyTrendImage;
     private boolean isTrendToday;
     private double price;
     private int quantityInStock;
+    private String img;
+    private String dailyImage;
 }

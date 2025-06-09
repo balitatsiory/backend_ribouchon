@@ -29,4 +29,7 @@ public class ItemData {
     private double price;
     @Column(name = "quantite_en_stock")
     private int quantityInStock;
+    private String img;
+    @Column(name = "image_du_jour")
+    private String dailyImage;
 }
