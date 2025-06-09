@@ -12,6 +12,7 @@ import org.springdoc.core.customizers.OpenApiCustomizer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import static magic.vente.stock.fixtures.ItemResponseFixture.itemRetrieveResponse;
 import static magic.vente.stock.fixtures.ItemResponseFixture.itemRetrieveResponseRetrieveManyResponse;
 
 
@@ -43,8 +44,19 @@ public class OpenApiDocumentationCustomizer {
                         .computeIfAbsent("application/json", key -> new io.swagger.v3.oas.models.media.MediaType())
                         .addExamples("SUCCESS",new Example().value(
                                 objectMapper.writeValueAsString(
-                                            itemRetrieveResponseRetrieveManyResponse
+                                        itemRetrieveResponseRetrieveManyResponse
                                 )));
+
+                openApi.getPaths().get("/items/dailyItem")
+                        .getGet()
+                        .getResponses()
+                        .get("200")
+                        .getContent()
+                        .computeIfAbsent("application/json", key -> new io.swagger.v3.oas.models.media.MediaType())
+                        .addExamples("SUCCESS", new Example().value(
+                                objectMapper.writeValueAsString(
+                                        itemRetrieveResponse
+                                        )));
             } catch (JsonProcessingException e) {
                 throw new RuntimeException(e);
             }

@@ -23,8 +23,6 @@ public class ItemData {
     private String reference;
     @Column(name = "libelle")
     private String label;
-    @Column(name = "est_du_jour")
-    private boolean isTrendToday;
     @Column(name = "prix")
     private double price;
     @Column(name = "quantite_en_stock")

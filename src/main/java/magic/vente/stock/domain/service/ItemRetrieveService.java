@@ -4,10 +4,12 @@ import lombok.RequiredArgsConstructor;
 import magic.vente.stock.domain.model.Item;
 import magic.vente.stock.domain.model.PageModel;
 import magic.vente.stock.dto.response.ItemRetrieveResponse;
+import magic.vente.stock.dto.response.RetrieveManyResponse;
 import magic.vente.stock.port.ItemPort;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.Map;
 
 @Service
@@ -28,5 +30,13 @@ public class ItemRetrieveService {
                 .build();
         return ResponseEntity.ok(retrieveManyResponse);
     }
-}
 
+    public ResponseEntity<ItemRetrieveResponse> retrieveDailyItem() {
+        LocalDate today = LocalDate.now();
+        Item dailyItem = itemPort.retrieveDailyItem(today);
+        if(dailyItem == null) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(ItemRetrieveResponse.of(dailyItem));
+    }
+}

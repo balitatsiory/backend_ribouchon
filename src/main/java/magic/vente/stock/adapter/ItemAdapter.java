@@ -11,7 +11,9 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDate;
 import java.util.Map;
+import java.util.Optional;
 
 @Repository
 @RequiredArgsConstructor
@@ -46,5 +48,11 @@ public class ItemAdapter implements ItemPort {
     @Override
     public Item retrieveOne(int id) {
         return null;
+    }
+
+    @Override
+    public Item retrieveDailyItem(LocalDate today) {
+        Optional<ItemData> itemData = itemJpaRepository.findDailyItem(today);
+        return itemData.map(ItemMapper::toDomain).orElse(null);
     }
 }

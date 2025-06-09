@@ -1,4 +1,4 @@
-package magic.vente.stock.domain.service;
+package magic.vente.stock.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

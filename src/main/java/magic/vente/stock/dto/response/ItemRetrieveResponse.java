@@ -16,7 +16,6 @@ public class ItemRetrieveResponse {
     private long id;
     private String label;
     private String reference;
-    private boolean isTrendToday;
     private double price;
     private int quantityInStock;
     private String image;
@@ -28,7 +27,6 @@ public class ItemRetrieveResponse {
                 .id(item.getId())
                 .label(item.getLabel())
                 .reference(item.getReference())
-                .isTrendToday(item.isTrendToday())
                 .price(item.getPrice())
                 .image(item.getImg())
                 .dailyImage(item.getDailyImage())

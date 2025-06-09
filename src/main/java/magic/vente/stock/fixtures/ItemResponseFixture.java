@@ -1,6 +1,6 @@
 package magic.vente.stock.fixtures;
 
-import magic.vente.stock.domain.service.RetrieveManyResponse;
+import magic.vente.stock.dto.response.RetrieveManyResponse;
 import magic.vente.stock.dto.response.ItemRetrieveResponse;
 
 import java.util.List;
@@ -12,7 +12,6 @@ public class ItemResponseFixture {
     static {
         itemRetrieveResponse = ItemRetrieveResponse.builder()
                 .id(1L)
-                .isTrendToday(true)
                 .reference("ref")
                 .price(100.0)
                 .label("Precious Ring")

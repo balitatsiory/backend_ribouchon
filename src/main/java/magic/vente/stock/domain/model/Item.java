@@ -11,7 +11,6 @@ public class Item {
     private String reference;
     private String imageUrl;
     private String dailyTrendImage;
-    private boolean isTrendToday;
     private double price;
     private int quantityInStock;
     private String img;
