@@ -18,3 +18,11 @@ La base de données utilisée est **PostgreSQL**. Le projet est prévu pour êtr
 - Obtenir la **liste des produits**.
 
 ## Documentation : https://dil-api.onrender.com/swagger-ui/index.html#/
+
+## 🚀🚀 Sprint 2 – Objectif
+
+  - Connexion / Login
+
+  - Ajout produit dans table panier_client
+
+  - Dans table produits mettre a jour quantite_en_stock lors de la validation de l'achat
