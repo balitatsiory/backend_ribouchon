@@ -23,8 +23,6 @@ La base de données utilisée est **PostgreSQL**. Le projet est prévu pour êtr
 
   - Connexion / Login
 
-  - Ajout produit dans table panier_client
-
-  - Dans table produits mettre a jour quantite_en_stock lors de la validation de l'achat
+  - Correction API dailyitem ( error 404 )
 
   -  => Valider les tests
