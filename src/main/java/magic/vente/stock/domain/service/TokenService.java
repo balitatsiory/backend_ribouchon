@@ -17,7 +17,7 @@ import java.util.Map;
 public class TokenService {
     private final String secretKey ;
 
-    public TokenService(@Value("${jwt.secret}") String secretKey) {
+    public TokenService(@Value("${secret.key}") String secretKey) {
         this.secretKey = secretKey;
     }
 
