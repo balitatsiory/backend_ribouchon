@@ -35,7 +35,7 @@ public class ItemRetrieveService {
         LocalDate today = LocalDate.now();
         Item dailyItem = itemPort.retrieveDailyItem(today);
         if(dailyItem == null) {
-            return ResponseEntity.notFound().build();
+            dailyItem = itemPort.retrieveLastDailyItem();
         }
         return ResponseEntity.ok(ItemRetrieveResponse.of(dailyItem));
     }

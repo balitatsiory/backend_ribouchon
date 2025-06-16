@@ -13,4 +13,6 @@ public interface ItemPort {
     Item retrieveOne(int id);
 
     Item retrieveDailyItem(LocalDate today);
+
+    Item retrieveLastDailyItem();
 }

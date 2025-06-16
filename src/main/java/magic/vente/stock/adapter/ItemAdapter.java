@@ -55,4 +55,10 @@ public class ItemAdapter implements ItemPort {
         Optional<ItemData> itemData = itemJpaRepository.findDailyItem(today);
         return itemData.map(ItemMapper::toDomain).orElse(null);
     }
+
+    @Override
+    public Item retrieveLastDailyItem() {
+        Optional<ItemData> itemData = itemJpaRepository.findLastDailyItem();
+        return itemData.map(ItemMapper::toDomain).orElse(null);
+    }
 }

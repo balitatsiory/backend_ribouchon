@@ -11,4 +11,7 @@ import java.util.Optional;
 public interface ItemJpaRepository extends JpaRepository<ItemData,Long>, JpaSpecificationExecutor<ItemData> {
     @Query("SELECT i FROM ItemData i JOIN DailyItemData d ON i.id = d.item.id WHERE d.date = :date")
     Optional<ItemData> findDailyItem(LocalDate date );
+
+    @Query("SELECT i FROM ItemData i JOIN DailyItemData d ON i.id = d.item.id ORDER BY d.date DESC LIMIT 1")
+    Optional<ItemData> findLastDailyItem();
 }

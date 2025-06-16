@@ -8,6 +8,7 @@ import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.examples.Example;
 import io.swagger.v3.oas.models.servers.Server;
 import jakarta.servlet.ServletContext;
+import magic.vente.stock.fixtures.AccountRequestFixture;
 import org.springdoc.core.customizers.OpenApiCustomizer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -29,6 +30,26 @@ public class OpenApiDocumentationCustomizer {
     public OpenAPI openAPI(ServletContext servletContext){
         Server server = new Server().url(servletContext.getContextPath());
         return new OpenAPI().addServersItem(server);
+    }
+
+    @Bean
+    public OpenApiCustomizer AccountLoginRequestDocumentationCustomizer(ObjectMapper objectMapper) {
+        return openApi -> {
+            // request
+            try {
+                openApi.getPaths().get("/accounts/login")
+                        .getPost()
+                        .getRequestBody()
+                        .getContent()
+                        .computeIfAbsent("application/json", key -> new io.swagger.v3.oas.models.media.MediaType())
+                        .addExamples("SUCCESS", new Example().value(
+                            objectMapper.writeValueAsString(
+                                    AccountRequestFixture.ACCOUNT_REQUEST)
+                        ));
+            } catch (JsonProcessingException e) {
+                throw new RuntimeException(e);
+            }
+        };
     }
 
     @Bean
