@@ -17,7 +17,8 @@ La base de données utilisée est **PostgreSQL**. Le projet est prévu pour êtr
 > Fournir une **API REST** pour permettre au frontend de :
 - Obtenir la **liste des produits**.
 
-## Documentation : https://dil-api.onrender.com/swagger-ui/index.html#/
+## Documentation url :
+https://dil-api.onrender.com/swagger-ui/index.html#/
 
 ## 🚀🚀 Sprint 2 – Objectif
 
